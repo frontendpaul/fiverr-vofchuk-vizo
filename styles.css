@@ -1,30 +1,474 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700,800,900|Poppins:300,400,500,600,700,700i&display=swap);
+
 :root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
+  --purple: #6c3a8e;
+  --pink: #c90f55;
+  --pink-light: #c90f55cc;
+  --pink-overlay: #f6004c;
+  --pink-gradient: #ee076e;
+  --orange-gradient: #f81f01;
   --white: #fff;
-  --gray: #6c757d;
+  --black: #000;
   --gray-dark: #343a40;
-  --primary: #007bff;
-  --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --secondary: #c6c9d8;
+  --bg-dark: #101010;
+  --bg-light: #191919;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-size: 14px;
+  line-height: 1.71429;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-dark);
+  color: var(--white);
+}
+
+img, svg {
+  vertical-align: middle;
+}
+
+p {
+  font-size: 16px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+address, blockquote, caption, dd, dl, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul {
+  margin: 0 0 15px;
+}
+
+h1.title {
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-family: 'Montserrat' ,sans-serif;
+  font-weight: 900;
+}
+
+h2.title {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+h3.title {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+h4.title {
+  margin-bottom: 9px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* General Classes */
+.container {
+  width: 320px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.ml--50 {
+  margin-left: 50px;
+}
+
+.pl--20 {
+  padding-left: 20px;
+}
+
+.bg-color--2 {
+  background: var(--bg-light);
+}
+
+.gradient-text {
+  display: inline-block;
+  background: #c90f55;
+  background: linear-gradient(125deg,#c90f55 30%,#6c3a8e);
+  /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f81f01",endColorstr="#ee076e",GradientType=1); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.socials-list,
+.main-menu,
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.backto-top {  
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  display: block;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  line-height: 49px;
+  border-radius: 50%;
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
+  transition: opacity .2s linear 0s,visibility;
+}
+
+.backto-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.backto-top svg {  
+  font-size: 14px;
+  width: 27px;
+  height: 27px;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 25px 20px;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  background: transparent;
+  transition: .3s;
+}
+
+.header.sticky {
+  padding: 10px 20px;
+  position: fixed;
+  background: var(--bg-light);
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+}
+
+.logo-img {
+  display: block;
+  height: 30px;
+}
+
+
+/* Socials */
+.socials-list {
+  margin-right: -5px;
+}
+
+.socials-list a {
+  display: block;
+  width: 30px;  
+  height: auto;
+  text-align: left;
+  line-height: inherit;
+  font-size: 16px;
+  color: var(--secondary);
+}
+
+
+/* Menu buttons */
+.hamburger-menu,
+.close-menu {
+  color: var(--secondary);
+  font-size: 28px; 
+}
+
+.hamburger-menu { 
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.close-menu {
+  position: fixed;
+  top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  right: 20px;
+  z-index: -10;
+}
+
+/* Menu */
+.main-menu-nav {
+  position: absolute;
+}
+
+.main-menu {
+  width: 60vw;
+  height: 100vh;
+  padding: 54px 20px;
+  background: var(--bg-dark);
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  right: -61vw;
+  transition: all .8s cubic-bezier(.77,.2,.05,1);
+}
+
+.main-menu > li {
+  padding: 10px 0;
+}
+
+.main-menu > li > a {  
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+}
+
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown > a {
+  position: relative;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+.has-dropdown > a.open {
+  color: var(--pink);
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+.has-dropdown > a::after {
+  width: 0;
+  height: 0;
+  border-color: #1f1f25 transparent transparent;
+  border-style: solid;
+  border-width: 7px 7px 0;
+  border-color: var(--white) transparent transparent;
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);  
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+.has-dropdown > a.open::after {
+  border-color: transparent transparent var(--pink);  
+  border-width: 0 7px 7px;
+}
+
+.submenu {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.submenu li {
+  padding: 3px 0;
+}
+
+.submenu li a {
+  padding: 2px 10px;  
+  margin: 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.submenu.active {
+  height: 100%;
+  padding: 12px 0;
+  opacity: 1;
+  visibility: visible;
+}
+/* Menu open */
+.menu-open .main-menu {
+  right: 0;
+  width: 84vw;
+}
+
+.menu-open .close-menu {  
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+}
+
+.menu-open .hamburger-menu {  
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+
+/* Hero */
+.hero {
+  min-height: auto;
+  min-height: 100%;
+  position: relative;
+  padding-top: 90px;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #101010;
+}
+
+.hero-service {
+  padding: 15px 0;
+}
+
+.hero-service .icon svg{
+  color: var(--pink);
+  font-size: 64px;
+  margin-bottom: 13px;
+  height: 45px;
+}
+
+
+.content p {
+  color: var(--secondary);
+  font-weight: 300;
+  opacity: .75;
+}
+
+
+
+/* About */
+.about {
+  padding: 60px 0;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.about-content h3.title {
+  font-weight: 500;
+}
+
+.about img {
+  display: block;
+  width: 200px;
+  margin: auto;
+}
+
+
+
+/* Services */
+.services {
+  padding: 60px 0;
+}
+
+.service-btn {
+  margin-top: 12px;
+}
+
+a.btn-transparent {  
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px;  
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+a.btn-transparent:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--pink);
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+a.btn-transparent:hover:after {
+  width: 100%;
+}
+
+.service {  
+  padding: 30px 18px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.service::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(90deg,#f61b10,#ef0963);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* opacity: 0;
+  visibility: hidden; */
+  border-radius: 10px;
+}
+
+.service .icon {
+  font-size: 54px;
+  font-weight: 400;
+  margin-bottom: 23px;
+  display: inline-flex;
+  color: var(--white);
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+.service .icon svg {
+  stroke-width: 1;
+}
+
+.service h3.title {  
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+.service .content p {
+  color: var(--white);
+  opacity: 1;
+  font-weight: 400;  
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
 }
