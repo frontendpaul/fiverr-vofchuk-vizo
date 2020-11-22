@@ -9,6 +9,7 @@
   --orange-gradient: #f81f01;
   --white: #fff;
   --black: #000;
+  --light-black: #0a0a0a;
   --gray-dark: #343a40;
   --secondary: #c6c9d8;
   --bg-dark: #101010;
@@ -35,12 +36,17 @@ body {
   color: var(--white);
 }
 
+section {
+  padding: 60px 0;
+}
+
 img, svg {
   vertical-align: middle;
 }
 
 p {
   font-size: 16px;
+  line-height: 28px;
 }
 
 p:last-child {
@@ -54,6 +60,10 @@ a {
 
 h1, h2, h3 {
   font-weight: 700;
+}
+
+h4, h5 {
+  font-weight: 600;
 }
 
 address, blockquote, caption, dd, dl, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul {
@@ -106,6 +116,10 @@ h4.title {
   align-items: center;
 }
 
+.mt--40 {
+  margin-top: 40px;
+}
+
 .ml--50 {
   margin-left: 50px;
 }
@@ -129,7 +143,8 @@ h4.title {
 
 .socials-list,
 .main-menu,
-.submenu {
+.submenu,
+.slider-dots {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -375,10 +390,6 @@ h4.title {
 
 
 /* About */
-.about {
-  padding: 60px 0;
-}
-
 .about-content p {
   font-size: 18px;
   line-height: 30px;
@@ -391,16 +402,12 @@ h4.title {
 .about img {
   display: block;
   width: 200px;
-  margin: auto;
+  margin: 0 auto 60px;
 }
 
 
 
 /* Services */
-.services {
-  padding: 60px 0;
-}
-
 .service-btn {
   margin-top: 12px;
 }
@@ -471,4 +478,199 @@ a.btn-transparent:hover:after {
   opacity: 1;
   font-weight: 400;  
   transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+
+
+/* Slider */
+.slider {
+  /* padding: 20px 0; */
+  margin: 0 10px;
+  position: relative;
+}
+
+.slider-btn {
+  display: none;
+}
+
+.slider-prev::before {
+  content: url(/assets/images/icons/slick-arrow-left.png);
+}
+
+.slides {
+  padding: 20px 0;
+}
+
+.slide {
+  /* width: 100%; */
+  min-height: 400px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.thumbnail {
+  transition: transform .28s ease;
+  z-index: 9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.slide:hover .thumbnail {
+  transform: scale(1.06);
+}
+
+.thumbnail::before {
+  background-color: var(--pink-overlay);
+  background-image: linear-gradient(var(--pink-overlay) 10%,var(--black));
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0;  
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+.slide:hover .thumbnail:before {
+  opacity: .65;
+}
+
+.thumbnail-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 5px;
+  background-color: var(--light-black);
+  transform: scale(1.13);
+  transition: transform .28s ease;
+  z-index: 4;
+}
+
+.slide:hover .thumbnail-img {
+  transform: scale(1);
+}
+
+.thumbnail-img:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  content: " ";
+  display: block;
+  border-radius: 5px;
+  background-color: rgba(25,25,25,.37);
+}
+
+.thumbnail-img.image-1 {
+  background-image: url(./asstes/porfolio/portfolio-1.jpg);
+}
+.thumbnail-img.image-2 {
+  background-image: url(./asstes/porfolio/portfolio-2.jpg);
+}
+.thumbnail-img.image-3 {
+  background-image: url(./asstes/porfolio/portfolio-3.jpg);
+}
+.thumbnail-img.image-4 {
+  background-image: url(./asstes/porfolio/portfolio-4.jpg);
+}
+.thumbnail-img.image-5 {
+  background-image: url(./asstes/porfolio/portfolio-5.jpg);
+}
+.thumbnail-img.image-6 {
+  background-image: url(./asstes/porfolio/portfolio-6.jpg);
+}
+
+.slide .content {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 40px;
+  z-index: 10;
+}
+
+.slide-cathegory {
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--secondary);
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.slide-title {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.slider-dots {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.slider-dots li {
+  display: inline-block;
+  width: 30px;
+  opacity: .35;
+  position: relative;
+}
+
+.slider-dots li.active {
+  opacity: 1;
+}
+
+.slider-dots li, .slider-dots button {
+  height: 20px;
+  cursor: pointer;
+}
+
+.slider-dots button {
+  width: 20px;
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  padding: 5px;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.slider-dots button::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--white);
+  border-radius: 50%;
+  margin-left: 11px;  
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+}
+
+.slider-dots li.active button::after {
+  transform: scale(2);
+}
+
+
+
+@media (min-width: 1280px) {
+  .slides {
+    margin-left: -150px;
+  }
 }
