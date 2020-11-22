@@ -669,8 +669,15 @@ a.btn-transparent:hover:after {
 
 
 
+
 @media (min-width: 1280px) {
   .slides {
-    margin-left: -150px;
+    margin: 0 -10px;
+  }
+
+  .slide {
+    position: relative;
+    left: 50%;
+    min-height: 500px;
   }
 }

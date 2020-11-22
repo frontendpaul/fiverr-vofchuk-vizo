@@ -39,31 +39,10 @@ class SiemaWithDots extends Siema {
   }
 }
 
-// if (document.querySelector(".siema") != null) {
-//   let mySiema = new Siema({
-//     easing: "cubic-bezier(0.76, 0, 0.24, 1)",
-//     duration: 500,    
-//     loop: true,
-//     perPage: {
-//       768: 2,
-//       1024: 3,
-//     }
-//   });
-//   const prev = document.querySelector(".slider-prev");
-//   const next = document.querySelector(".slider-next");
-//   prev.addEventListener("click", () => mySiema.prev());
-//   next.addEventListener("click", () => mySiema.next());
-  
-//   setInterval(() => mySiema.next(), 5000);
-// }
-
-
 
 const mySiemaWithDots = new SiemaWithDots({
   selector: document.querySelector('.slides'),
-  // easing: "cubic-bezier(0.76, 0, 0.24, 1)",  
   loop: true,
-  // duration: 500,
   perPage: {
     768: 2,
     1024: 3,
@@ -82,7 +61,3 @@ const prev = document.querySelector(".slider-prev");
   const next = document.querySelector(".slider-next");
   prev.addEventListener("click", () => mySiemaWithDots.prev());
   next.addEventListener("click", () => mySiemaWithDots.next());
-
-// setInterval(() => mySiemaWithDots.next(), 5000);
-
-// document.querySelector('.slides').style = 'overflow: visible; direction: ltr; cursor: -webkit-grab;';
