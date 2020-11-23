@@ -30,8 +30,15 @@ document.querySelector('.menutrigger').addEventListener('click', function () {
 document.querySelector('.close-menu').addEventListener('click', function () {
   document.querySelector('.header').classList.remove('menu-open');
 })
-
-
+// Close if clicked link (dont close if its dropdown)
+const mainMenuLinks = document.querySelectorAll('.main-menu li');
+for (const mainMenuLink of mainMenuLinks) {
+  mainMenuLink.addEventListener('click', function(e) {
+    if (!e.target.parentElement.classList.contains('has-dropdown')) {
+      document.querySelector('.header').classList.remove('menu-open');
+    }
+  })
+}
 
 // Counter
 import { CountUp } from './countUp.min.js';
