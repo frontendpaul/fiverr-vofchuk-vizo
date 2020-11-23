@@ -116,8 +116,25 @@ h4.title {
   align-items: center;
 }
 
+.description {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .mt--40 {
   margin-top: 40px;
+}
+
+.mb--60 {
+  margin-bottom: 60px;
 }
 
 .ml--50 {
@@ -390,19 +407,14 @@ h4.title {
 
 
 /* About */
-.about-content p {
-  font-size: 18px;
-  line-height: 30px;
-}
-
-.about-content h3.title {
-  font-weight: 500;
-}
-
 .about img {
   display: block;
   width: 200px;
   margin: 0 auto 60px;
+}
+
+.about-list {
+  margin-top: 15px;
 }
 
 
@@ -665,6 +677,25 @@ a.btn-transparent:hover:after {
 
 .slider-dots li.active button::after {
   transform: scale(2);
+}
+
+
+.counter {
+  font-size: 45px;
+  line-height: 56px;
+  margin-bottom: 5px;
+  margin-left: -11px;
+  color: var(--pink);
+  position: relative;
+  display: inline-block;
+}
+
+.counter::after {
+  right: -26px;
+  position: absolute;
+  top: -17px;
+  font-size: 40px;
+  content: "+";
 }
 
 

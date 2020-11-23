@@ -161,18 +161,18 @@
   <section id="about" class="about bg-color--2">
     <img src="./asstes/phone.png" alt="">
     <div class="container">
-      <div class="content about-content">
+      <div class="content">
         <h2 class="title section-title">A Vizo</h2>
-        <p>Nascemos para mostrar ao mundo que um software deve ser inteligente e proativo. A inconformação ao ver que softwares são criados apenas para agrupar dados quando o potencial é muito além de apenas uma planilha com layout personalizado. Um software de verdade é pensado nos mínimos detalhes, desde a posição do botão à mensagem de boas vindas, até a estatística necessária para se tomar uma decisão vital.</p>
+        <p class="description">Nascemos para mostrar ao mundo que um software deve ser inteligente e proativo. A inconformação ao ver que softwares são criados apenas para agrupar dados quando o potencial é muito além de apenas uma planilha com layout personalizado. Um software de verdade é pensado nos mínimos detalhes, desde a posição do botão à mensagem de boas vindas, até a estatística necessária para se tomar uma decisão vital.</p>
 
         <div class="row">
-          <div class="col-50">
-            <h3 class="title">Inteligente</h3>
-            <p>Com base em dados estratégicos, faz cálculos, mostra gráficos e estatísticas para que o usuário tome a melhor decisão para o seu negócio.</p>
+          <div class="col-50 about-list">
+            <h3 class="title fw-500">Inteligente</h3>
+            <p class="description">Com base em dados estratégicos, faz cálculos, mostra gráficos e estatísticas para que o usuário tome a melhor decisão para o seu negócio.</p>
           </div>
-          <div class="col-50">
-            <h3 class="title">Proativo</h3>
-            <p>Prevê situações, informa problemas e direciona para a solução de forma objetiva, ou seja, pega na sua mão e te leva ao sucesso.</p>
+          <div class="col-50 about-list">
+            <h3 class="title fw-500">Proativo</h3>
+            <p class="description">Prevê situações, informa problemas e direciona para a solução de forma objetiva, ou seja, pega na sua mão e te leva ao sucesso.</p>
           </div>
         </div>
       </div>
@@ -277,7 +277,8 @@
         </div>
       </div>
     </div>
-    <div class="porfolio-slider mt--40">
+
+    <div class="porfolio-slider mt--40 mb--60">
       <div class="slider">
         <button class="slider-btn slider-prev">Previous</button>
         <button class="slider-btn slider-next">Next</button>
@@ -345,6 +346,24 @@
         </div>
       </div>
     </div>
+
+    <div class="container">
+      <h3 class="title fw-500 text-center">Nossos Números</h3>
+      <div class="row">
+        <div class="col-33 content text-center mt--40">
+          <h5 class="counter" id="counter-1">0</h5>
+          <p class="description">Projetos desenvolvidos ao longo de +5 anos de história com muito amor e café</p>
+        </div>
+        <div class="col-33 content text-center mt--40">
+          <h5 class="counter" id="counter-2">0</h5>
+          <p class="description">Linhas de códigos arquitetadas, escritas, refatoradas e entregues</p>
+        </div>
+        <div class="col-33 content text-center mt--40">
+          <h5 class="counter" id="counter-3">0</h5>
+          <p class="description">Clientes felizes, realizados e principalmente respeitados do jeito Devio de ser</p>
+        </div>
+      </div>
+    </div>
   </section>
   
   
@@ -359,6 +378,11 @@
 
 
 
+  
+ 
+
+
+
   <style>
     #spotlight {
       background-color: #000000cc;
@@ -369,13 +393,15 @@
     }
   </style>
 
-  <script src="./scripts/index.js"></script>
+  <script src="./scripts/index.js" type="module"></script>
   <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="./scripts/particles.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/siema@1.5.1/dist/siema.min.js"></script>
   <script src="./scripts/slider.js"></script>
   <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.6.3/dist/spotlight.cdn.js"></script>
   <script src="./scripts/gallery.js"></script>
+  
+
 </body>
 
 </html>
