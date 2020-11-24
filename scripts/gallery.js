@@ -2,27 +2,27 @@
 var gallery = [{
   title: "Porfolio image 1",
   description: "description.",
-src: "./asstes/porfolio/big/portfolio-1.jpg"
+src: "./assets/porfolio/big/portfolio-1.jpg"
 },{
   title: "Porfolio image 2",
   description: "description.",
-src: "./asstes/porfolio/big/portfolio-2.jpg"
+src: "./assets/porfolio/big/portfolio-2.jpg"
 },{
   title: "Porfolio image 3",
   description: "description.",
-src: "./asstes/porfolio/big/portfolio-3.jpg"
+src: "./assets/porfolio/big/portfolio-3.jpg"
 },{
   title: "Porfolio image 4",
   description: "description.",
-src: "./asstes/porfolio/big/portfolio-4.jpg"
+src: "./assets/porfolio/big/portfolio-4.jpg"
 },{
   title: "Porfolio image 5",
   description: "description.",
-src: "./asstes/porfolio/big/portfolio-5.jpg"
+src: "./assets/porfolio/big/portfolio-5.jpg"
 },{
   title: "Porfolio image 6",
   description: "description.",
-src: "./asstes/porfolio/big/portfolio-6.jpg"
+src: "./assets/porfolio/big/portfolio-6.jpg"
 }];
 
 document.querySelector('.slider').addEventListener('click', (e) => {
