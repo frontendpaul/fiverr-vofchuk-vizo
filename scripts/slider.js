@@ -44,7 +44,7 @@ const mySiemaWithDots = new SiemaWithDots({
   selector: document.querySelector('.slides'),
   loop: true,
   perPage: {
-    768: 2,
+    482: 2,
     1024: 3,
     1280: 4
   },
