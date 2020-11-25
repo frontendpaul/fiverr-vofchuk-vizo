@@ -1112,7 +1112,7 @@ a, a.open, .btn-transparent, .btn-transparent:after, .has-dropdown > a::after, .
     letter-spacing: .2px;
   }
 
-  .header.sticky .header-btn .btn-round {
+  .header.sticky .btn-round {
     border-color: var(--white);
   }
 
@@ -1433,6 +1433,7 @@ a, a.open, .btn-transparent, .btn-transparent:after, .has-dropdown > a::after, .
 
   .about-img {
     width: 75%;
+    margin: 0 auto;
   }
 
   .services-wrapper {
