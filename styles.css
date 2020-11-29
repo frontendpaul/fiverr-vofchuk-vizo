@@ -322,7 +322,7 @@ textarea {
 }
 
 /* Transitions */
-a, a.open, .btn-transparent, .btn-transparent:after, .has-dropdown > a::after, .service .icon, .service h3.title, .service .content p, .thumbnail::before, .slider-dots button::after, .service, .socials-list li, .slider-prev::before, .slider-next::before {
+a, a.open, .btn-transparent, .btn-transparent:after, .has-dropdown > a::after, .service .icon, .service h3.title, .service .content p, .thumbnail::before, .slider-dots button::after, .service, .service::before, .socials-list li, .slider-prev::before, .slider-next::before {
   transition: all .3s cubic-bezier(.645,.045,.355,1);
 }
 
