@@ -16,12 +16,29 @@ window.addEventListener("scroll", function () {
 });
 
 // Dropdown menu handler
-document.querySelector(".has-dropdown > a").addEventListener('click', function () {
-  this.parentElement
-    .querySelector(".submenu")
-    .classList.toggle("active"),
-    this.classList.toggle("open");
+const dropdownLink = document.querySelector(".has-dropdown > a");
+const submenu = document.querySelector('.submenu');
+
+dropdownLink.addEventListener('click', function (e) {
+  // this.parentElement
+  //   .querySelector(".submenu")
+  //   .classList.toggle("active"),
+  // this.classList.toggle("open");
+  dropdownLink.classList.toggle('open');
+  submenu.classList.toggle('active');
+  e.stopPropagation();
 });
+
+// Clicking outside will hide submenu
+// Working by event bubbling
+document.addEventListener('click', (e) => {
+  dropdownLink.classList.remove('open');
+  submenu.classList.remove('active');
+});
+
+
+
+
 // Open menu
 document.querySelector('.menutrigger').addEventListener('click', function () {
   document.querySelector('.header').classList.add('menu-open');
