@@ -26,14 +26,18 @@ dropdownLink.addEventListener('click', function (e) {
   // this.classList.toggle("open");
   dropdownLink.classList.toggle('open');
   submenu.classList.toggle('active');
+
+  // Important because of event bubbling below
   e.stopPropagation();
 });
 
 // Clicking outside will hide submenu
 // Working by event bubbling
 document.addEventListener('click', (e) => {
-  dropdownLink.classList.remove('open');
-  submenu.classList.remove('active');
+  if (submenu.classList.contains('active') && e.target != submenu) {
+    dropdownLink.classList.remove('open');
+    submenu.classList.remove('active');
+  }
 });
 
 
